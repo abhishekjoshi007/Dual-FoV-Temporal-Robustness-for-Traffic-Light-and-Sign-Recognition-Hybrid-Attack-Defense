@@ -1,3 +1,3 @@
-change the path of the image inout and output
-remove persons and cars
-either store bounding images or delete the bounding images 
+change the path of the image input and output<br>
+remove persons and cars<br>
+either store bounding images or delete the bounding images<br> 
