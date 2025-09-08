@@ -99,7 +99,7 @@ def filter_cameras_dataset(root_path: str, keep=KEEP_DEFAULT):
 
 if __name__ == "__main__":
     # EDIT THIS to your dataset root
-    dataset_root = "/Volumes/Untitled/aimotive_tl_ts_dataset"
+    dataset_root = "/Volumes/Untitled/Dataset"
 
     filter_cameras_dataset(
         dataset_root,
