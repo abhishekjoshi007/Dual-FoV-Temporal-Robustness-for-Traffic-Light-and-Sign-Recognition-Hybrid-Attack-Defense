@@ -75,8 +75,39 @@ class UnifiedDefenseStack(nn.Module):
     def temperature_scaling(self, probs: torch.Tensor) -> torch.Tensor:
         if not self.use_temperature_scaling:
             return probs
-        
+
         return F.softmax(torch.log(probs + 1e-10) / self.temperature, dim=-1)
+
+    def _apply_temperature_to_detections(self, results: List[Dict], temperature: float) -> List[Dict]:
+        """Apply temperature-like smoothing to detection confidences
+
+        Note: This is a post-processing approximation since YOLOv8's Ultralytics API
+        doesn't expose raw class logits. We apply power transform to approximate
+        the effect of temperature scaling on softmax outputs.
+        """
+        if not self.use_temperature_scaling:
+            return results
+
+        smoothed_results = []
+        for det in results:
+            if len(det['scores']) == 0:
+                smoothed_results.append(det)
+                continue
+
+            scores = det['scores']
+            # Smooth via power transform (approximates softmax temperature effect)
+            smoothed = scores ** (1.0 / temperature)
+            # Normalize to maintain probability distribution properties
+            smoothed = smoothed / (smoothed.sum() + 1e-10)
+
+            smoothed_det = {
+                'boxes': det['boxes'],
+                'scores': smoothed,
+                'classes': det['classes']
+            }
+            smoothed_results.append(smoothed_det)
+
+        return smoothed_results
     
     def calculate_entropy(self, probs: torch.Tensor) -> torch.Tensor:
         return -torch.sum(probs * torch.log(probs + 1e-10), dim=-1)
@@ -87,12 +118,19 @@ class UnifiedDefenseStack(nn.Module):
         long_range: torch.Tensor,
         conf_threshold: float = 0.25,
     ) -> Dict:
+        # Layer 1: Feature Squeezing (bit-depth reduction + median filtering)
         mid_squeezed = self.feature_squeeze(mid_range)
         long_squeezed = self.feature_squeeze(long_range)
-        
+
+        # Get base model predictions
         mid_results = self.base_model.predict(mid_squeezed, conf_threshold)
         long_results = self.base_model.predict(long_squeezed, conf_threshold)
+
+        # Layer 2: Temperature Scaling (confidence calibration)
+        mid_results = self._apply_temperature_to_detections(mid_results, self.temperature)
+        long_results = self._apply_temperature_to_detections(long_results, self.temperature)
         
+        # Layer 3: Entropy-Based Cross-FoV Gating
         if self.use_entropy_gating:
             mid_entropy = self._compute_frame_entropy(mid_results)
             long_entropy = self._compute_frame_entropy(long_results)

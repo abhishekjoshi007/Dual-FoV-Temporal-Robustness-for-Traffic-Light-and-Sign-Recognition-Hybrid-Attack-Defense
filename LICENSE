@@ -1,0 +1,146 @@
+MIT License
+
+Copyright (c) 2026 Abhishek Joshi, Janhavi Krishna Koda, Abhishek Phadke
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+DATASET USAGE NOTICE
+================================================================================
+
+This software uses publicly available datasets that must be obtained separately
+from their original providers under their respective licenses. The code in this
+repository (preprocessing scripts, model implementations, evaluation tools) is
+licensed under MIT, but the datasets have their own restrictions:
+
+1. aiMotive 3D Traffic Light and Sign Dataset
+   License: Research use only (Kaggle Terms of Service)
+   Source: https://www.kaggle.com/datasets/tamasmatuszka/aimotive-3d-traffic-light-and-sign-dataset
+   Restrictions: Must accept Kaggle ToS and dataset-specific terms
+
+2. Waymo Open Dataset
+   License: Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+   Source: https://waymo.com/open/
+   Restrictions: NON-COMMERCIAL USE ONLY
+   Attribution: Must cite Waymo Open Dataset paper
+
+3. Udacity Self-Driving Car Dataset
+   License: MIT License
+   Source: https://github.com/udacity/self-driving-car
+   Restrictions: None (MIT allows commercial use)
+
+4. Texas Sequences (proprietary)
+   License: Available upon request for research purposes
+   Source: Contact ajoshi5@islander.tamucc.edu
+   Restrictions: Requires signed Data Use Agreement (DUA)
+
+================================================================================
+COMBINED BENCHMARK LICENSE
+================================================================================
+
+Due to the most restrictive license (Waymo CC BY-NC 4.0), any combined benchmark
+created using these datasets is restricted to:
+
+✓ PERMITTED USES:
+  - Academic research
+  - Educational purposes
+  - Non-commercial publications
+  - Method comparison and evaluation
+
+✗ PROHIBITED USES:
+  - Commercial applications
+  - Production deployment in commercial products
+  - Redistribution of original source data
+  - Sale or sublicensing of dataset combinations
+
+================================================================================
+REPRODUCTION COMPLIANCE
+================================================================================
+
+This repository provides:
+  1. Preprocessing scripts (MIT licensed)
+  2. Frame selection indices (factual data, not copyrightable)
+  3. Documentation for dataset reconstruction
+
+Users MUST:
+  1. Download original datasets from their respective sources
+  2. Accept each dataset's original license terms
+  3. Run provided preprocessing scripts to create the benchmark
+  4. Comply with the most restrictive license (Waymo CC BY-NC 4.0)
+
+This approach follows precedent from COCO, ImageNet, and similar benchmarks
+that provide tools for dataset creation rather than redistributing source data.
+
+================================================================================
+THIRD-PARTY DEPENDENCIES
+================================================================================
+
+This software uses the following open-source libraries:
+
+- PyTorch (BSD-3-Clause License)
+- Ultralytics YOLOv8 (AGPL-3.0 License)
+- OpenCV (Apache-2.0 License)
+- NumPy (BSD License)
+- SciPy (BSD License)
+
+See requirements.txt for complete dependency list with versions.
+
+================================================================================
+CITATION
+================================================================================
+
+If you use this code or methodology in your research, please cite:
+
+@inproceedings{joshi2026dualfov,
+  title={Sequence-Preserving Dual-FoV Defense for Traffic Sign and Light Recognition},
+  author={Joshi, Abhishek and Koda, Janhavi Krishna and Phadke, Abhishek},
+  booktitle={Proceedings of [Conference Name]},
+  year={2026}
+}
+
+For the datasets, please also cite their original papers:
+- aiMotive: Matuszka, T. et al. (2019)
+- Waymo: Sun, P. et al. (2020) - https://arxiv.org/abs/1912.04838
+- Udacity: Udacity Self-Driving Car Program
+
+================================================================================
+CONTACT
+================================================================================
+
+For questions about:
+- Code: Open an issue at https://github.com/abhishekjoshi007/[repo]/issues
+- Texas dataset access: ajoshi5@islander.tamucc.edu
+- Licensing: ajoshi5@islander.tamucc.edu
+
+For dataset access from original providers, contact them directly via the
+URLs listed above.
+
+================================================================================
+DISCLAIMER
+================================================================================
+
+This software is provided for research purposes. The authors are not responsible
+for any misuse or violation of dataset licenses by users. It is the user's
+responsibility to:
+  1. Obtain proper authorization for dataset access
+  2. Comply with all applicable licenses
+  3. Ensure their use case is permitted under dataset restrictions
+
+THE AUTHORS MAKE NO WARRANTIES REGARDING DATASET AVAILABILITY, ACCURACY, OR
+COMPLETENESS. USERS ASSUME ALL RISKS ASSOCIATED WITH DATASET USAGE.

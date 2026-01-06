@@ -26,7 +26,8 @@ model:
 
 training:
   epochs: 100
-  batch_size: 32
+  batch_size: 32  # Per-GPU batch size
+  num_gpus: 4     # Total effective batch size = 32 × 4 = 128
   optimizer: AdamW
   lr: 0.0001
   weight_decay: 0.0001
@@ -35,6 +36,11 @@ training:
   save_period: 10
   device: 0
   mixed_precision: true
+
+  # Note: Paper (Line 454-456) uses:
+  # - batch_size: 32 per GPU
+  # - num_gpus: 4 GPUs
+  # - Effective batch size: 128 samples per iteration
 
 augmentation:
   horizontal_flip: 0.5

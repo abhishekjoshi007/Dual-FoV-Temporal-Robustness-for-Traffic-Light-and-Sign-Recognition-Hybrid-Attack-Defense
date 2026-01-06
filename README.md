@@ -283,6 +283,22 @@ python scripts/evaluate.py \
 
 ## 🔬 Reproducing Paper Results
 
+### Important Notes on Reproducibility
+
+**Recapture Experiments (Section 6.5, Lines 694-706):**
+The 15 recapture scenarios described in the paper (photographing screen-displayed images under various conditions) were conducted manually to evaluate physical-world robustness. These experiments are **not included in the automated evaluation pipeline** due to their manual nature. To replicate:
+1. Display test images on a high-resolution monitor (2560×1440)
+2. Photograph using a smartphone camera (12MP+) at varying:
+   - Distances: 30cm, 60cm, 90cm
+   - Angles: 0°, 15°, 30°
+   - Lighting: Indoor LED, Natural daylight, Low-light
+3. Process recaptured images through the defense stack
+4. Compare detection results with original digital images
+
+For questions about recapture methodology, contact: ajoshi5@islander.tamucc.edu
+
+---
+
 To reproduce **Table 9** (main results) from the paper:
 
 ### Step 1: Download Pre-trained Checkpoints
@@ -667,10 +683,3 @@ For questions, issues, or collaboration:
 
 
 
-<p align="center">
-  <img src="docs/assets/dual_fov_demo.gif" alt="Dual-FoV Demo" width="600"/>
-  <br>
-  <em>Demo: Dual-FoV defense in action (Highway ODD with sun glare)</em>
-</p>
-
----
