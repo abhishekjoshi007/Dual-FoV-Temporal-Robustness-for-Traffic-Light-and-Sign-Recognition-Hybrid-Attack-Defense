@@ -665,23 +665,7 @@ For questions, issues, or collaboration:
 
 **GitHub Issues**: [Report bugs or request features](https://github.com/abhishekjoshi007/Dual-FoV-Temporal-Robustness-for-Traffic-Light-and-Sign-Recognition-Hybrid-Attack-Defense/issues)
 
----
 
-## 🔄 Updates
-
-**v1.0.0** (January 2026)
-- Initial release
-- Paper accepted at MDPI
-- Code-paper alignment verified
-- Pre-trained checkpoints available
-
-**Planned Updates:**
-- [ ] Extended ODD coverage (construction zones, tunnels)
-- [ ] Certified robustness guarantees
-- [ ] Integration with planning/control modules
-- [ ] Real-world deployment on test vehicle
-
----
 
 <p align="center">
   <img src="docs/assets/dual_fov_demo.gif" alt="Dual-FoV Demo" width="600"/>
