@@ -188,12 +188,12 @@ Our benchmark integrates **4 source datasets** into a unified dual-FoV format ac
 
 ### Dataset Sources
 
-| Dataset | License | Sequences | URL |
-|---------|---------|-----------|-----|
+| Dataset | License | Sequences | 
+|---------|---------|-----------|
 | **aiMotive 3D** | Research-only | 210 
 | **Waymo Open** | CC BY-NC 4.0 | 80 | 
 | **Udacity SDC** | MIT | 45 | 
-| **Texas (ours)** | By request | 165 | Contact authors |
+| **Texas (ours)** | By request | 165 |
 
 ### Combined License
 
