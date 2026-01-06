@@ -78,7 +78,7 @@ Comprehensive evaluation against:
 
 ## 🏗️ Architecture
 
-![Architecture](./fig/fig_3.png)
+![Architecture](./fig/fig_1.png)
 
 
 ---
