@@ -78,7 +78,7 @@ Comprehensive evaluation against:
 
 ## 🏗️ Architecture
 
-![Architecture](./utils/Model_architecture.png)
+![Architecture](./fig/fig_3.png)
 
 
 ---
