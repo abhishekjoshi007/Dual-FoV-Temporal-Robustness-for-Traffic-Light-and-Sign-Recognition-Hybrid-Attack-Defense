@@ -1,0 +1,295 @@
+{
+    "CapturedObjects": [
+        {
+            "ActorName": "TRAFFIC_LIGHT 284",
+            "ObjectId": 284,
+            "BoundingBox3D Origin X": 174.6639988259194,
+            "BoundingBox3D Origin Y": 16.458834569435567,
+            "BoundingBox3D Origin Z": 5.63341423496604,
+            "BoundingBox3D Extent X": 0.5952908932775005,
+            "BoundingBox3D Extent Y": 0.5952908932775005,
+            "BoundingBox3D Extent Z": 1.3711142769827482,
+            "BoundingBox3D Orientation Quat W": 0.9999999432874928,
+            "BoundingBox3D Orientation Quat X": -5.6649451371181466e-08,
+            "BoundingBox3D Orientation Quat Y": 0.00023246269724479964,
+            "BoundingBox3D Orientation Quat Z": 0.00024369263899056104,
+            "ObjectType": "TRAFFIC_LIGHT",
+            "Occluded": {
+                "F_LONGRANGECAM_C": 0.9984851479530334
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 284,
+                "SubType": "v-3line",
+                "Lights": [
+                    {
+                        "state": "off",
+                        "mask": "left_arrow",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "left_arrow",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "left_arrow",
+                        "color": "unknown"
+                    }
+                ],
+                "subject": "vehicles"
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_LIGHT 285",
+            "ObjectId": 285,
+            "BoundingBox3D Origin X": 174.8262919026165,
+            "BoundingBox3D Origin Y": 24.734977259417064,
+            "BoundingBox3D Origin Z": 5.130067154765129,
+            "BoundingBox3D Extent X": 0.6664762664655915,
+            "BoundingBox3D Extent Y": 0.6664762664655915,
+            "BoundingBox3D Extent Z": 1.460647504029523,
+            "BoundingBox3D Orientation Quat W": 0.9999998787884935,
+            "BoundingBox3D Orientation Quat X": 1.2059210339149612e-07,
+            "BoundingBox3D Orientation Quat Y": -0.00033011100662991977,
+            "BoundingBox3D Orientation Quat Z": 0.00036530768848170745,
+            "ObjectType": "TRAFFIC_LIGHT",
+            "Occluded": {
+                "F_LONGRANGECAM_C": 0.9971844553947449
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 285,
+                "SubType": "v-3line",
+                "Lights": [
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    }
+                ],
+                "subject": "vehicles"
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_LIGHT 286",
+            "ObjectId": 286,
+            "BoundingBox3D Origin X": 174.90644510435231,
+            "BoundingBox3D Origin Y": 21.118940193759045,
+            "BoundingBox3D Origin Z": 5.368718646466732,
+            "BoundingBox3D Extent X": 0.6332188242651454,
+            "BoundingBox3D Extent Y": 0.6332188242651454,
+            "BoundingBox3D Extent Z": 1.3876359999121997,
+            "BoundingBox3D Orientation Quat W": 0.9999989504878025,
+            "BoundingBox3D Orientation Quat X": -1.0944119635772264e-07,
+            "BoundingBox3D Orientation Quat Y": -0.0014468246370692218,
+            "BoundingBox3D Orientation Quat Z": -7.564225732258944e-05,
+            "ObjectType": "TRAFFIC_LIGHT",
+            "Occluded": {
+                "F_LONGRANGECAM_C": 0.9976797699928284
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 286,
+                "SubType": "v-3line",
+                "Lights": [
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    }
+                ],
+                "subject": "vehicles"
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_LIGHT 287",
+            "ObjectId": 287,
+            "BoundingBox3D Origin X": 180.5603297944399,
+            "BoundingBox3D Origin Y": 34.132617638621014,
+            "BoundingBox3D Origin Z": 2.093698205426336,
+            "BoundingBox3D Extent X": 0.6718331670672554,
+            "BoundingBox3D Extent Y": 0.6718331670672554,
+            "BoundingBox3D Extent Z": 1.3013659328366023,
+            "BoundingBox3D Orientation Quat W": 0.9999997521589014,
+            "BoundingBox3D Orientation Quat X": -2.2537316680622156e-07,
+            "BoundingBox3D Orientation Quat Y": 0.0005924131387153961,
+            "BoundingBox3D Orientation Quat Z": 0.00038043233044795924,
+            "ObjectType": "TRAFFIC_LIGHT",
+            "Occluded": {
+                "F_LONGRANGECAM_C": 0.9969334602355957
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 287,
+                "SubType": "v-3line",
+                "Lights": [
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    }
+                ],
+                "subject": "vehicles"
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_LIGHT 533",
+            "ObjectId": 533,
+            "BoundingBox3D Origin X": 174.66793173008045,
+            "BoundingBox3D Origin Y": 30.339937123353597,
+            "BoundingBox3D Origin Z": 2.101879437454045,
+            "BoundingBox3D Extent X": 0.7289998553022217,
+            "BoundingBox3D Extent Y": 0.7289998553022217,
+            "BoundingBox3D Extent Z": 1.3209303606843772,
+            "BoundingBox3D Orientation Quat W": 0.9999875370562765,
+            "BoundingBox3D Orientation Quat X": 7.353701570686936e-06,
+            "BoundingBox3D Orientation Quat Y": -0.004746049388550338,
+            "BoundingBox3D Orientation Quat Z": 0.0015494170666783204,
+            "ObjectType": "TRAFFIC_LIGHT",
+            "Occluded": {
+                "F_LONGRANGECAM_C": 0.2576574981212616
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 533,
+                "SubType": "v-3line",
+                "Lights": [
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    }
+                ],
+                "subject": "vehicles"
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_LIGHT 9",
+            "ObjectId": 9,
+            "BoundingBox3D Origin X": 192.5591805202785,
+            "BoundingBox3D Origin Y": -0.7591396595526021,
+            "BoundingBox3D Origin Z": 2.5955180628225207,
+            "BoundingBox3D Extent X": 0.6249324078044264,
+            "BoundingBox3D Extent Y": 0.6249324078044264,
+            "BoundingBox3D Extent Z": 1.1425328874896663,
+            "BoundingBox3D Orientation Quat W": 0.0002534974116091709,
+            "BoundingBox3D Orientation Quat X": 0.002294153933886575,
+            "BoundingBox3D Orientation Quat Y": -5.815636331873884e-07,
+            "BoundingBox3D Orientation Quat Z": 0.9999973362946782,
+            "ObjectType": "TRAFFIC_LIGHT",
+            "Occluded": {
+                "F_LONGRANGECAM_C": 0.9982086420059204
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 9,
+                "SubType": "v-3line",
+                "Lights": [
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "full",
+                        "color": "unknown"
+                    }
+                ],
+                "subject": "vehicles"
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_LIGHT 20",
+            "ObjectId": 20,
+            "BoundingBox3D Origin X": 192.898570393656,
+            "BoundingBox3D Origin Y": -0.9081745805451646,
+            "BoundingBox3D Origin Z": 1.3972463933750987,
+            "BoundingBox3D Extent X": 0.4666855494537966,
+            "BoundingBox3D Extent Y": 0.4666855494537966,
+            "BoundingBox3D Extent Z": 0.5605454009611128,
+            "BoundingBox3D Orientation Quat W": 0.0002534974116091709,
+            "BoundingBox3D Orientation Quat X": 0.002294153933886575,
+            "BoundingBox3D Orientation Quat Y": -5.815636331873884e-07,
+            "BoundingBox3D Orientation Quat Z": 0.9999973362946782,
+            "ObjectType": "TRAFFIC_LIGHT",
+            "Occluded": {
+                "F_LONGRANGECAM_C": 0.991455078125
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 20,
+                "SubType": "v-3line",
+                "Lights": [
+                    {
+                        "state": "off",
+                        "mask": "unknown",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "unknown",
+                        "color": "unknown"
+                    },
+                    {
+                        "state": "off",
+                        "mask": "unknown",
+                        "color": "unknown"
+                    }
+                ],
+                "subject": "vehicles"
+            }
+        }
+    ],
+    "FrameId": 4286,
+    "Timestamp": 0,
+    "TimestampMiddle": 0,
+    "VERSION": 10306
+}

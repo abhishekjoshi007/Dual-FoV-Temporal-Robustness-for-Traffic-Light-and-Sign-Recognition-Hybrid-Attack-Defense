@@ -1,0 +1,163 @@
+experiment:
+  name: unified_defense_stack
+  description: "Full unified defense stack with all components"
+  seed: 42
+
+data:
+  root_dir: ../Unified/Dataset/
+  img_size: 640
+  batch_size: 16
+  num_workers: 8
+  sequence_length: 30
+  cameras:
+    - F_MIDRANGECAM_C
+    - F_LONGRANGECAM_C
+  odd_list:
+    - highway
+    - night
+    - rainy
+    - urban
+
+model:
+  architecture: yolov8m
+  num_classes: 9
+  pretrained: true
+  img_size: 640
+  base_model_checkpoint: checkpoints/det_natural/best.pt
+
+defense:
+  feature_squeeze:
+    enabled: true
+    bit_depth: 5
+    median_kernel: 3
+  
+  temperature_scaling:
+    enabled: true
+    temperature: 3.0
+  
+  entropy_gating:
+    enabled: true
+    entropy_threshold: 0.5
+  
+  temporal_voting:
+    enabled: true
+    window_size: 5
+    quality_weight: true
+    nms_threshold: 0.5
+    min_confidence: 0.3
+    persistence_threshold: 3
+
+training:
+  epochs: 50
+  batch_size: 16
+  optimizer: AdamW
+  lr: 0.00005
+  weight_decay: 0.0001
+  scheduler: cosine
+  patience: 10
+  save_period: 5
+  device: 0
+  mixed_precision: true
+  freeze_backbone: true
+  freeze_epochs: 10
+
+augmentation:
+  horizontal_flip: 0.5
+  brightness_contrast: 0.2
+  gaussian_noise: 0.1
+  color_jitter: 0.3
+  natural_perturbations:
+    enabled: true
+    probability: 0.4
+    types:
+      - rain
+      - fog
+      - sun_glare
+      - dirt
+      - motion_blur
+      - headlight
+      - lens_flare
+    intensity_range: [0.3, 0.7]
+
+evaluation:
+  iou_threshold: 0.5
+  conf_threshold: 0.25
+  metrics:
+    - mAP
+    - per_class_AP
+    - RW-mAP
+    - per_class_RW_AP
+    - ASR
+    - RW-ASR
+    - CFR
+    - stability_score
+  
+  attack_suite:
+    enabled: true
+    types:
+      - fgsm
+      - pgd
+      - uap
+      - hybrid
+    
+    fgsm:
+      epsilon: 0.031
+    
+    pgd:
+      epsilon: 0.031
+      alpha: 0.008
+      num_iter: 10
+    
+    uap:
+      epsilon: 0.039
+      num_images: 200
+      num_iter: 10
+    
+    hybrid:
+      natural_types:
+        - rain
+        - fog
+        - sun_glare
+      digital_types:
+        - fgsm
+        - pgd
+      natural_intensity: 0.5
+
+  perturbation_suite:
+    types:
+      - rain
+      - fog
+      - sun_glare
+      - dirt
+      - motion_blur
+      - headlight
+      - lens_flare
+      - droplets
+    
+    compound:
+      enabled: true
+      combinations:
+        - [rain, fog]
+        - [rain, motion_blur]
+        - [sun_glare, lens_flare]
+        - [rain, fog, motion_blur]
+
+statistical_testing:
+  enabled: true
+  alpha: 0.05
+  n_bootstrap: 1000
+  bonferroni_correction: true
+
+logging:
+  log_dir: logs/unified_defense
+  save_dir: checkpoints/unified_defense
+  visualization_dir: visualizations/unified_defense
+  tensorboard: true
+  log_interval: 10
+  save_visualizations: true
+  
+visualization:
+  enabled: true
+  save_detections: true
+  save_interval: 50
+  num_samples: 10

@@ -1,0 +1,58 @@
+experiment:
+  name: baseline_yolov8m
+  description: "Baseline YOLOv8m model without defense mechanisms"
+  seed: 42
+
+data:
+  root_dir: ../Unified/Dataset/
+  img_size: 640
+  batch_size: 32
+  num_workers: 8
+  sequence_length: 30
+  cameras:
+    - F_MIDRANGECAM_C
+    - F_LONGRANGECAM_C
+  odd_list:
+    - highway
+    - night
+    - rainy
+    - urban
+
+model:
+  architecture: yolov8m
+  num_classes: 9
+  pretrained: true
+  img_size: 640
+
+training:
+  epochs: 100
+  batch_size: 32
+  optimizer: AdamW
+  lr: 0.0001
+  weight_decay: 0.0001
+  scheduler: cosine
+  patience: 10
+  save_period: 10
+  device: 0
+  mixed_precision: true
+
+augmentation:
+  horizontal_flip: 0.5
+  brightness_contrast: 0.2
+  gaussian_noise: 0.1
+  color_jitter: 0.3
+
+evaluation:
+  iou_threshold: 0.5
+  conf_threshold: 0.25
+  metrics:
+    - mAP
+    - per_class_AP
+    - ASR
+    - CFR
+
+logging:
+  log_dir: logs/baseline
+  save_dir: checkpoints/baseline
+  tensorboard: true
+  log_interval: 10

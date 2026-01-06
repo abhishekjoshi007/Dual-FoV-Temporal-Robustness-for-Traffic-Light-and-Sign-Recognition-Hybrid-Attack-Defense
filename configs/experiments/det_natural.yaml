@@ -1,0 +1,96 @@
+experiment:
+  name: det_natural
+  description: "Model trained with natural perturbation augmentation"
+  seed: 42
+
+data:
+  root_dir: ../Unified/Dataset/
+  img_size: 640
+  batch_size: 32
+  num_workers: 8
+  sequence_length: 30
+  cameras:
+    - F_MIDRANGECAM_C
+    - F_LONGRANGECAM_C
+  odd_list:
+    - highway
+    - night
+    - rainy
+    - urban
+
+model:
+  architecture: yolov8m
+  num_classes: 9
+  pretrained: true
+  img_size: 640
+
+training:
+  epochs: 100
+  batch_size: 32
+  optimizer: AdamW
+  lr: 0.0001
+  weight_decay: 0.0001
+  scheduler: cosine
+  patience: 10
+  save_period: 10
+  device: 0
+  mixed_precision: true
+
+augmentation:
+  horizontal_flip: 0.5
+  brightness_contrast: 0.2
+  gaussian_noise: 0.1
+  color_jitter: 0.3
+  natural_perturbations:
+    enabled: true
+    probability: 0.3
+    types:
+      - rain
+      - fog
+      - sun_glare
+      - dirt
+      - motion_blur
+    intensity_range: [0.3, 0.7]
+
+natural_perturbations:
+  rain:
+    probability: 0.15
+    intensity_range: [0.3, 0.7]
+  fog:
+    probability: 0.1
+    intensity_range: [0.3, 0.6]
+  sun_glare:
+    probability: 0.15
+    intensity_range: [0.4, 0.7]
+  dirt:
+    probability: 0.1
+    intensity_range: [0.3, 0.6]
+  motion_blur:
+    probability: 0.1
+    intensity_range: [0.3, 0.6]
+  headlight:
+    probability: 0.1
+    intensity_range: [0.4, 0.7]
+  lens_flare:
+    probability: 0.1
+    intensity_range: [0.3, 0.6]
+  droplets:
+    probability: 0.1
+    intensity_range: [0.3, 0.6]
+
+evaluation:
+  iou_threshold: 0.5
+  conf_threshold: 0.25
+  metrics:
+    - mAP
+    - per_class_AP
+    - RW-mAP
+    - ASR
+    - RW-ASR
+    - CFR
+
+logging:
+  log_dir: logs/det_natural
+  save_dir: checkpoints/det_natural
+  tensorboard: true
+  log_interval: 10
